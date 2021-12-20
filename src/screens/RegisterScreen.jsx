@@ -3,9 +3,9 @@ import { Form, Button, Row, Col, } from 'react-bootstrap'
 import Message from '../components/Message';
 import Loader from '../components/Loader';
 import { useDispatch, useSelector } from 'react-redux';
-import { register } from '../actions/userActions';
-import FormContainer from '../components/FormContainer';
 import { useNavigate, useLocation, Link } from 'react-router-dom'
+import FormContainer from '../components/FormContainer';
+import { register } from '../actions/userActions';
 
 
 const useQuery = () => {

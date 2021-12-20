@@ -6,21 +6,26 @@ import thunk from 'redux-thunk'
 import { composeWithDevTools } from 'redux-devtools-extension'
 import { productListReducer, ProductsDetailsReducer } from './reducers/productReducers';
 import { cartReducer } from './reducers/cartReducers'
-import { userLoginReducer, userRegisterReducer, userDetailReducer, userUpdateProfileReducer } from './reducers/userReducers';
-import { orderCreateReducer, orderDetailsReducer, orderPayReducer } from './reducers/orderReducer'
+import { userLoginReducer, userRegisterReducer, userDetailReducer, userUpdateProfileReducer, userListReducer } from './reducers/userReducers';
+import { orderCreateReducer, orderDetailsReducer, orderPayReducer, orderListMyReducer, } from './reducers/orderReducer'
 
 
 const reducer = combineReducers({
     productList: productListReducer,
     productDetails: ProductsDetailsReducer,
     cart: cartReducer,
+
+
     userLogin: userLoginReducer,
     userRegister: userRegisterReducer,
     userDetails: userDetailReducer,
     userUpdateProfile: userUpdateProfileReducer,
+    userList: userListReducer,
+
     orderCreate: orderCreateReducer,
     orderDetails: orderDetailsReducer,
     orderPay: orderPayReducer,
+    orderListMy: orderListMyReducer,
 })
 //  pull data from state 
 const cartItemsFromStorage = localStorage.getItem('cartItems') ?

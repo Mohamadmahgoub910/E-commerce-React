@@ -11,6 +11,7 @@ function ProductScreen() {
     const [qty, setQty] = useState(1)
     let navigate = useNavigate();
     const { id } = useParams()
+
     const dispatch = useDispatch()
     const productDetails = useSelector(state => state.productDetails)
     const { loading, error, product } = productDetails

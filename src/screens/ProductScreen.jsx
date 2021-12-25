@@ -17,13 +17,13 @@ function ProductScreen() {
     const { loading, error, product } = productDetails
     useEffect(() => {
         dispatch(ListProductsDetails(id))
-    }, [dispatch])
+    }, [dispatch, id])
     const addToCartHandler = () => {
         navigate(`/cart/${id}?qty=${qty}`)
     }
     return (
         <div>
-            <Link to='/' className='btn btn-primary my-3'> Back </Link>
+            <Link to='/' className='btn btn-success my-3'> Back </Link>
             {loading ?
                 <Loader />
                 : error
@@ -87,7 +87,7 @@ function ProductScreen() {
                                     <ListGroup.Item>
                                         <Button
                                             onClick={addToCartHandler}
-                                            className='outline-primary mx-3'
+                                            className='btn btn-success mx-3'
                                             disabled={product.countInStock === 0}
                                             type='button'
                                         >

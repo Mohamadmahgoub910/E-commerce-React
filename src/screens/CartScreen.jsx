@@ -7,8 +7,8 @@ import { addToCart, removeFromCart } from '../actions/cartActions';
 
 function CartScreen() {
     let navigate = useNavigate();
-    let params = useParams();
     let location = useLocation();
+    let params = useParams();
     const productId = params.id;
     const qty = location.search ? Number(location.search.split("=")[1]) : 1;
     const dispatch = useDispatch();
@@ -94,7 +94,7 @@ function CartScreen() {
                     <ListGroup.Item>
                         <Button
                             type='button'
-                            className='outline-primary my-3 mx-5'
+                            className='btn btn-success my-3 mx-5'
                             disabled={cartItems.length === 0}
                             onClick={checkoutHandler}
                         >

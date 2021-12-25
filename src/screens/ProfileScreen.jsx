@@ -16,7 +16,7 @@ function ProfileScreen() {
     const [confirmPassword, setConfirmPassword] = useState('')
     const [message, setMessage] = useState('')
     let navigate = useNavigate();
-    const dispatch = useDispatch()
+    const dispatch = useDispatch();
     const userDetails = useSelector(state => state.userDetails)
     const { error, loading, user } = userDetails
 
@@ -33,7 +33,7 @@ function ProfileScreen() {
         if (!userInfo) {
             navigate('/login');
         } else {
-            if (!user || !user.name || success) {
+            if (!user || !user.name || success || userInfo._id !== user.id) {
                 dispatch({ type: USER_UPDATE_PROFILE_RESET })
                 dispatch(getUserDetails('profile'))
                 dispatch(listMyOrders())
@@ -112,6 +112,7 @@ function ProfileScreen() {
                     <Button
                         type='submit'
                         variant='primary'
+                        className='btn btn-success'
                     >
                         Update
                     </Button>
@@ -131,7 +132,7 @@ function ProfileScreen() {
                                 <th>Date</th>
                                 <th>Total</th>
                                 <th>Paid</th>
-                                <th>Delivered</th>
+                                <th>Info</th>
                                 <th></th>
                             </tr>
                         </thead>
@@ -146,7 +147,7 @@ function ProfileScreen() {
                                     )}</td>
                                     <td>
                                         <LinkContainer to={`/order/${order._id}`}>
-                                            <Button className='btn-sm info'>Details</Button>
+                                            <Button className='btn-sm btn-secondary'><i class="fa fa-info" aria-hidden="true"></i></Button>
                                         </LinkContainer>
                                     </td>
                                 </tr>

@@ -46,6 +46,7 @@ function PaymentScreen() {
                 <Button
                     type='primary'
                     variant='primary'
+                    className='btn btn-success'
                 >
                     Continue
                 </Button>

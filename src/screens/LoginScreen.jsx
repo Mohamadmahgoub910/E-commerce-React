@@ -59,7 +59,7 @@ function LoginScreen() {
                 <br />
                 <Button
                     type='submit'
-                    variant='primary'
+                    variant='btn btn-success'
                 >
                     SIGN IN
                 </Button>

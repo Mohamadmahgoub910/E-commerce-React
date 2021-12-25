@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Row, Col, Image, Card, ListGroup, Button } from 'react-bootstrap';
+import { Row, Col, Image, Card, ListGroup } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useParams, useNavigate } from 'react-router-dom'
 import Message from './../components/Message';
@@ -62,7 +62,7 @@ function OrderScreen() {
                 setSdkReady(true)
             }
         }
-    }, [dispatch, order, orderId, successPay])
+    }, [dispatch, order, orderId, successPay, navigate, userInfo])
 
 
     const successPaymentHandler = (paymentResult) => {

@@ -21,6 +21,9 @@ import {
     ORDER_DELIVER_FAIL,
     ORDER_DELIVER_RESET,
 
+    ORDER_LIST_REQUEST,
+    ORDER_LIST_SUCCESS,
+    ORDER_LIST_FAIL,
 
 } from '../constants/orderConstants';
 
@@ -130,6 +133,31 @@ export const orderDeliverReducer = (state = {}, action) => {
 
 
 // My Order pay details
+export const orderListReducer = (state = { orders: [] }, action) => {
+    switch (action.type) {
+        case ORDER_LIST_REQUEST:
+            return {
+                loading: true
+            }
+
+        case ORDER_LIST_SUCCESS:
+            return {
+                loading: false,
+                orders: action.payload
+            }
+
+        case ORDER_LIST_FAIL:
+            return {
+                loading: false,
+                error: action.payload
+            }
+        default:
+            return state
+    }
+}
+
+
+// My Order admin details
 export const orderListMyReducer = (state = { orders: [] }, action) => {
     switch (action.type) {
         case ORDER_LIST_MY_REQUEST:

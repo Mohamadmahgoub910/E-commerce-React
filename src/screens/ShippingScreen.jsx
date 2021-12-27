@@ -85,6 +85,7 @@ function ShippingScreen() {
                 <Button
                     type='submit'
                     variant='primary'
+                    className='btn btn-success'
                 >
                     Continue
                 </Button>
